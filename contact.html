@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halaman Kontak</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --primary: #2563eb;
+        --secondary: #1e40af;
+        --accent: #3b82f6;
+        --light: #f8fafc;
+        --dark: #1e293b;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--light);
+        color: var(--dark);
+        line-height: 1.6;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      header {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        color: white;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        align-items: center;
+        padding-left: 20px;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+      }
+
+      header p {
+        margin: 0.5rem 0 0;
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      nav {
+        padding: 1rem;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      nav a {
+        color: var(--dark);
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: 600;
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+
+      nav a:hover {
+        color: var(--primary);
+        background-color: rgba(37, 99, 235, 0.1);
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1,
+      h2 {
+        text-align: center;
+      }
+
+      /* Form Styling */
+      .contact-form {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        margin-bottom: 40px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #2c3e50;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      .submit-btn {
+        background-color: #2c3e50;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .submit-btn:hover {
+        background-color: #1a252f;
+      }
+
+      /* Alert Styling */
+      .alert {
+        padding: 15px;
+        background-color: #4caf50;
+        color: white;
+        border-radius: 4px;
+        margin-top: 20px;
+        display: none;
+      }
+
+      /* Popup Styling */
+      .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .popup-content {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        max-width: 500px;
+        width: 80%;
+        position: relative;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .popup-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #777;
+      }
+
+      .popup-title {
+        color: #e74c3c;
+        margin-top: 0;
+      }
+
+      .popup-btn {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      footer {
+        background-color: var(--dark);
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h3>EduTech</h3>
+
+      <nav>
+        <a href="index.html">Beranda</a>
+        <a href="about.html">Tentang Kami</a>
+        <a href="features.html">Fitur</a>
+        <a href="contact.html">Kontak</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <section class="contact-form">
+        <h2>Form Pendaftaran</h2>
+        <form id="registrationForm">
+          <div class="form-group">
+            <label for="name">Nama Lengkap</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="interest">Minat Belajar</label>
+            <select id="interest" name="interest" required>
+              <option value="">-- Pilih Minat Belajar --</option>
+              <option value="matematika">Matematika</option>
+              <option value="sains">Sains</option>
+              <option value="bahasa">Bahasa</option>
+              <option value="komputer">Ilmu Komputer</option>
+              <option value="seni">Seni & Musik</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Pesan (Opsional)</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Kirim Pendaftaran</button>
+
+          <div class="alert" id="successAlert">Pesan anda terkirim! Kami akan menghubungi Anda segera.</div>
+        </form>
+      </section>
+    </div>
+
+    <!-- Popup Promosi -->
+    <div class="popup-overlay" id="promoPopup">
+      <div class="popup-content">
+        <span class="popup-close" id="closePopup">&times;</span>
+        <h2 class="popup-title">DISKON SPESIAL!</h2>
+        <h3>Dapatkan Potongan 30%</h3>
+        <p>Untuk pendaftaran kursus hari ini. Promo berlaku hingga akhir bulan!</p>
+        <p><strong>Gunakan kode: BELAJAR30</strong></p>
+        <button class="popup-btn" id="getPromoBtn">Dapatkan Promo</button>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Website Pembelajaran. Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <script>
+      document.getElementById("registrationForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        document.getElementById("successAlert").style.display = "block";
+
+        setTimeout(function () {
+          document.getElementById("registrationForm").reset();
+          document.getElementById("successAlert").style.display = "none";
+        }, 3000);
+      });
+
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          document.getElementById("promoPopup").style.visibility = "visible";
+          document.getElementById("promoPopup").style.opacity = "1";
+        }, 3000);
+      });
+
+      document.getElementById("closePopup").addEventListener("click", function () {
+        document.getElementById("promoPopup").style.opacity = "0";
+        setTimeout(function () {
+          document.getElementById("promoPopup").style.visibility = "hidden";
+        }, 300);
+      });
+
+      document.getElementById("getPromoBtn").addEventListener("click", function () {
+        alert("Kode promo BELAJAR30 berhasil disalin!");
+        document.getElementById("promoPopup").style.opacity = "0";
+        setTimeout(function () {
+          document.getElementById("promoPopup").style.visibility = "hidden";
+        }, 300);
+      });
+    </script>
+  </body>
+</html>
